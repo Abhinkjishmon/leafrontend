@@ -1,0 +1,12 @@
+.image-head{
+    width: 18rem;
+    background-color: rgb(188, 174, 174);
+}
+.card-img-top{
+    transition: 3s;
+}
+.card-img-top:hover{
+    transform: scale(1.5);
+    transition: 2s;
+    cursor: pointer;
+}

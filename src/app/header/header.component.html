@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-4 px-lg-5">
+        <div class="col-lg-6">
+            <a  class="navbar-brand" routerLink="products" >
+                <img width="50px" src="https://tse3.mm.bing.net/th?id=OIP.1KZ1EqFnB51s4uzLx47F3AHaHa&pid=Api&P=0" alt="site icon">
+                <span>online cart</span>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <form action="" class="d-flex">
+                        <input (keyup)="search($event)" type="text" class="form-control" placeholder="search for products">
+                    </form>
+                </li>
+                <li class="nav-item"><a routerLink="products/wishlist" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-heart text-danger"></i> wishlist
+                </a></li>
+            </ul>
+            <form class="d-flex">
+                <a routerLink="products/cart" class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</nav>
+

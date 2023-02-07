@@ -1,0 +1,15 @@
+.wishbtns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    padding-top: 5rem;
+    text-align: center;
+}

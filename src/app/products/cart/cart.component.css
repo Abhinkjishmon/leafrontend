@@ -1,0 +1,16 @@
+.row{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    
+}
+.buttonsa{
+    display: grid;
+    gap: .2rem;
+}
+.right-side{
+    border: 1px solid;
+    border-radius: .6rem;
+    padding: .5rem;
+}
