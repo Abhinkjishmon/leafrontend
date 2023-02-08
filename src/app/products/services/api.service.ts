@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  searchKey:string = ""
+  //to hold search key from header component
+  searchKey = new BehaviorSubject('')
 
   constructor(private http: HttpClient) {
     

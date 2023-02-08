@@ -14,6 +14,6 @@ export class HeaderComponent {
 
       search(event:any){
       let searchTerm = event.target.value
-      this.api.searchKey = searchTerm
+      this.api.searchKey.next(searchTerm)
     }
 }
