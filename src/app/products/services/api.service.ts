@@ -31,4 +31,9 @@ export class ApiService {
   getWishlist(){
     return this.http.get('http://localhost:3000/get-wishlist')
   }
+
+  //remove-item-wishlist/:productId api call
+  removeItemFromWishlist(productId:any){
+    return this.http.delete('http://localhost:3000/remove-item-wishlist/' +productId)
+  }
 }

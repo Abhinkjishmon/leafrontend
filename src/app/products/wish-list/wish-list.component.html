@@ -1,5 +1,5 @@
 <!-- empty wishlist -->
-<div *ngIf="!wishlistStatus" class="container">
+<div *ngIf="wishlistStatusMsg" class="container">
     <div class="row">
         <img style="height: 300px; width: 400px;" src="https://i.pinimg.com/originals/13/13/7d/13137d5f9dd7ce895b5f20fc726be2e0.gif" alt="empty wishlist">
         <h3 class="text-dark">Your wishlist is empty</h3>
@@ -10,7 +10,7 @@
 
 
 <!-- wishlist product section -->
-<section *ngIf="wishlistStatus" class="py-5">
+<section *ngIf="!wishlistStatusMsg" class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="col mb-5" *ngFor="let product of wishlist">
@@ -29,8 +29,8 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div  class="wishbtns">
-                            <a class="btn btn-outline-dark"><i class="fa-solid fa-trash fa-shake"></i></a>
-                            <a class="btn btn-outline-dark mt-auto" routerLink="/products/cart"><i class="fa-solid fa-cart-plus fa-shake"></i></a>
+                            <button (click)="removeItem(product.id)" class="btn btn-outline-dark"><i class="fa-solid fa-trash fa-shake"></i></button>
+                            <button class="btn btn-outline-dark mt-auto" routerLink="/products/cart"><i class="fa-solid fa-cart-plus fa-shake"></i></button>
                         </div>
                     </div>
                 </div>

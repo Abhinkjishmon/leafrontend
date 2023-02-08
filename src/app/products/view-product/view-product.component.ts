@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-view-product',
@@ -11,7 +12,7 @@ export class ViewProductComponent implements OnInit{
 
   productId:any;
   viewProduct:any
-  constructor(private activatedRoute:ActivatedRoute,private api:ApiService){
+  constructor(private activatedRoute:ActivatedRoute,private api:ApiService,private cart:CartService){
 
   }
 
@@ -43,5 +44,10 @@ export class ViewProductComponent implements OnInit{
       alert(result.error.message)
     }
     )
+  }
+
+  //addtocart
+  addToCart(product:any){
+    this.cart.addToCart(product)
   }
 }

@@ -9,7 +9,7 @@ import { ApiService } from '../services/api.service';
 export class WishListComponent implements OnInit{
 
   wishlist:any;
-  wishlistStatus = false
+  wishlistStatusMsg = ''
 
   constructor(private api:ApiService){}
 
@@ -17,13 +17,31 @@ export class WishListComponent implements OnInit{
     this.api.getWishlist()
     .subscribe((result:any)=>{
       this.wishlist = result.wishlist
-      this.wishlistStatus = true
+      if(this.wishlist.length==0){
+        this.wishlistStatusMsg='wishlist empty'
+      }
     },
     (result:any)=>{
       if(result.error.message){
-        this.wishlistStatus = false
+        this.wishlistStatusMsg = 'wishlist empty'
       }
     }
+    )
+  }
+  removeItem(productId:any){
+    this.api.removeItemFromWishlist(productId)
+    .subscribe(
+      (result:any)=>{
+        this.wishlist =result.wishlist
+        console.log(this.wishlist);
+        if(this.wishlist.length==0){
+          this.wishlistStatusMsg = 'wishlist empty'
+        }
+        
+      },
+      (result:any)=>{
+        alert(result.error.message)
+      }
     )
   }
 }
