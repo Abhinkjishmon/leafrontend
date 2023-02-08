@@ -22,4 +22,13 @@ export class ApiService {
   viewProduct(productId: any) {
     return this.http.get('http://localhost:3000/view-products/' + productId)
   }
+  //add-to-wishlist api call
+  addtowishlist(product:any){
+    return this.http.post('http://localhost:3000/add-to-wishlist/',product)
+  }
+
+  //get-wishlist api call
+  getWishlist(){
+    return this.http.get('http://localhost:3000/get-wishlist')
+  }
 }

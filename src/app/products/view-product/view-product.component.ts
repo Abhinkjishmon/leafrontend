@@ -30,5 +30,18 @@ export class ViewProductComponent implements OnInit{
       this.viewProduct = result.products
       
     })
+    
+  }
+
+  //addtowishlist(viewProduct)
+  addtowishlist(product:any){
+    this.api.addtowishlist(product)
+    .subscribe((result:any)=>{
+      alert(result.message)
+    },
+    (result:any)=>{
+      alert(result.error.message)
+    }
+    )
   }
 }
