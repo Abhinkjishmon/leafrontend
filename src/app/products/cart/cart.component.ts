@@ -9,6 +9,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit{
 
   cartItems:any = []
+  grandTotal:number=0
 
     constructor(private cart:CartService){
 
@@ -20,5 +21,17 @@ export class CartComponent implements OnInit{
           this.cartItems = data
         }
       )
+
+      this.grandTotal = this.cart.grandTotal()
+    }
+
+    //removeItem(product)
+    removeItem(product:any){
+      this.cart.removeCartItem(product)
+      this.grandTotal = this.cart.grandTotal()
+    }
+    //emptyCart
+    emptyCart(){
+      this.cart.removeCart()
     }
 }

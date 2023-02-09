@@ -19,26 +19,26 @@
                     <th>action</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let item of cartItems">
+            <tbody *ngFor="let item of cartItems; let i=index">
                 <tr>
-                    <th>1</th>
+                    <th>{{i+1}}</th>
                     <th>
                         <img style="width: 50px; height: 50px;"
-                            src="https://tse1.mm.bing.net/th?id=OIP.NZNegUMglMH6lFOB3GlVFwHaHE&pid=Api&P=0"
+                            [src]="item.image"
                             alt="product image">
                     </th>
                     <th>
                         <input style="width: 55px;" type="number">
                     </th>
-                    <th>3000</th>
-                    <th><i class="fa-solid fa-trash fa-shake"></i></th>
+                    <th>${{item.price}}</th>
+                    <th><a (click)="removeItem(item)"><i class="fa-solid fa-trash fa-shake"></i></a></th>
                 </tr>
             </tbody>
         </table>
         <div class="right-side">
-            <h3>Total Cost: 3000</h3>
+            <h3>Total Cost: {{grandTotal}}</h3>
             <div class="buttonsa">
-                <a class="btn btn-outline-danger">Empty Cart</a>
+                <a (click)="emptyCart()" class="btn btn-outline-danger">Empty Cart</a>
                 <a class="btn btn-outline-warning">Check Out</a>
                 <a routerLink="" class="btn btn-outline-primary">Shop More</a>
             </div>
