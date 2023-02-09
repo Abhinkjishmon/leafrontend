@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-wish-list',
@@ -11,7 +12,7 @@ export class WishListComponent implements OnInit{
   wishlist:any;
   wishlistStatusMsg = ''
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private cart:CartService){}
 
   ngOnInit(): void {
     this.api.getWishlist()
@@ -43,5 +44,10 @@ export class WishListComponent implements OnInit{
         alert(result.error.message)
       }
     )
+  }
+
+  //addToCart
+  addToCart(product:any){
+    this.cart.addToCart(product)
   }
 }

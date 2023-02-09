@@ -30,7 +30,7 @@
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div  class="wishbtns">
                             <button (click)="removeItem(product.id)" class="btn btn-outline-dark"><i class="fa-solid fa-trash fa-shake"></i></button>
-                            <button class="btn btn-outline-dark mt-auto" routerLink="/products/cart"><i class="fa-solid fa-cart-plus fa-shake"></i></button>
+                            <button (click)="addToCart(product)" class="btn btn-outline-dark mt-auto" routerLink="/products/cart"><i class="fa-solid fa-cart-plus fa-shake"></i></button>
                         </div>
                     </div>
                 </div>
