@@ -14,3 +14,9 @@
     border-radius: .6rem;
     padding: .5rem;
 }
+.modal-body{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+
+}

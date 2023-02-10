@@ -49,5 +49,6 @@ export class WishListComponent implements OnInit{
   //addToCart
   addToCart(product:any){
     this.cart.addToCart(product)
+    this.removeItem(product.id)
   }
 }
